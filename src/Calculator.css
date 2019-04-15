@@ -1,0 +1,14 @@
+.display{
+    /* height: 50px; */ 
+    font-size: 32px;
+    background-color: #595757;
+    height: 85px;
+    line-height: 85px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}

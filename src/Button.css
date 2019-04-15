@@ -1,0 +1,28 @@
+.container{
+    font-size: 32px;
+    height: 75px;
+    width: 75px;
+    line-height: 75px;
+    border: 1px solid #B12E4C;
+    background-color: white;
+    color: black;
+}
+.symbolContainer{
+    font-size: 32px;
+    height: 75px;
+    width: 75px;
+    line-height: 75px;
+    border: 1px solid #B12E4C;
+    background-color: #D54886;
+    color: white;
+}
+
+.clearButton{
+    font-size: 32px;
+    height: 75px;
+    width: 229px;
+    line-height: 75px;
+    border: 1px solid #B12E4C;
+    background-color:white;
+    color: #C0B1B8;
+}
