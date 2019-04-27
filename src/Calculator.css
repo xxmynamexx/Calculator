@@ -1,6 +1,9 @@
 .display{
     /* height: 50px; */ 
+    overflow: hidden;
+    direction: rtl;
     font-size: 32px;
+    max-width: 298px;
     background-color: #595757;
     height: 85px;
     line-height: 85px;

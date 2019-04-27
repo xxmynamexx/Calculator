@@ -7,6 +7,8 @@ function Button(props){
         buttonStyle = 'symbolContainer'
     } else if(props.isClear){
         buttonStyle = 'clearButton'
+    } else if(props.isZero){
+        buttonStyle = 'zeroButton'
 
     } 
     return (

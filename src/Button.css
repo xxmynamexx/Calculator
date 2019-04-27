@@ -6,6 +6,13 @@
     border: 1px solid #B12E4C;
     background-color: white;
     color: black;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
 .symbolContainer{
     font-size: 32px;
@@ -15,6 +22,13 @@
     border: 1px solid #B12E4C;
     background-color: #D54886;
     color: white;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
 
 .clearButton{
@@ -25,4 +39,14 @@
     border: 1px solid #B12E4C;
     background-color:white;
     color: #C0B1B8;
+}
+
+.zeroButton{
+    font-size: 32px;
+    height: 75px;
+    width: 229px;
+    line-height: 75px;
+    border: 1px solid #B12E4C;
+    background-color:white;
+    color: black;
 }

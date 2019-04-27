@@ -7,17 +7,60 @@ class Calculator extends Component{
         super(props)
         this.state = {
             display: '0',
+            answerShown: false,
         }
-        this.handleClick = this.handleClick.bind(this)
+        //this.handleClick = this.handleClick.bind(this)
     }
 
-    handleClick(i){
+    isSymbol = (i) => {
+        return i === '-' || i === '+' || i === '÷' || i === 'x'
+    }
+    calculateInput = (i) => {
+        let input = this.state.display
+        if(!this.isSymbol(input[input.length - 1])){
+            console.log('Evaluate')
+            this.setState({
+                display: eval(input),
+                answerShown: true,
+            })
+        } else {
+            console.log('Need number as last value')
+        }
+
+    }
+    handleClick = (i) => {
+        console.log('I is: ', i)
         if(Number.isInteger(i)){
             this.setState((state,props) => {
+                let displayStr = state.display === '0' || this.state.answerShown ? '' + i : '' + state.display + i
                 return {
-                    display: state.display + i
+                    display: displayStr,
+                    answerShown: false,
                 }
             })
+        } else if(this.isSymbol(i)){
+            let strLen = this.state.display.length
+            let lastChar = this.state.display[strLen - 1]
+            let charToAdd = i
+            if(i === 'x'){
+                charToAdd = '*'
+            } else if(i === '÷'){
+                charToAdd = '/'
+            }
+            if(!this.isSymbol(lastChar)){
+                this.setState({
+                    display: this.state.display + '' + charToAdd,
+                    answerShown: false,
+                })
+            }
+
+        } else if(i === 'clear'){
+            this.setState({
+                display: 0,
+                answerShown: false,
+            })
+        } else if(i === '='){
+            this.calculateInput();
         }
     }
 
@@ -25,7 +68,9 @@ class Calculator extends Component{
         return (
             <div>
                 <div className='display'>
-                    {this.state.display}
+                    <bdi>
+                      {this.state.display}
+                    </bdi>
                 </div> 
                 <div className='row'>
                     <Button value={'clear'} isClear onClick={this.handleClick}/>
@@ -47,6 +92,10 @@ class Calculator extends Component{
                     <Button value={1} onClick={this.handleClick}/>
                     <Button value={2} onClick={this.handleClick}/>
                     <Button value={3} onClick={this.handleClick}/>
+                    <Button value={'x'} onClick={this.handleClick} isSymbol/>
+                </div> 
+                <div className='row'>
+                    <Button value={0} isZero onClick={this.handleClick}/>
                     <Button value={'='} onClick={this.handleClick} isSymbol/>
                 </div> 
 
